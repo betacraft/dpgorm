@@ -1,6 +1,6 @@
 # Defer Panic gorm package
 
-[![wercker status]()
+[![wercker status](https://app.wercker.com/status/36c6dbc709cd3f8b9318debc3b28f2f2/s "wercker status")](https://app.wercker.com/project/bykey/36c6dbc709cd3f8b9318debc3b28f2f2)
 
 [![GoDoc](https://godoc.org/github.com/deferpanic/dpgorm?status.svg)](https://godoc.org/github.com/deferpanic/dpgorm)
 
