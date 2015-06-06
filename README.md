@@ -1,0 +1,2 @@
+# dpgorm
+deferpanic gorm package
