@@ -22,13 +22,6 @@ import (
 	"time"
 )
 
-type Model struct {
-	ID        uint `gorm:"primary_key"`
-	CreatedAt time.Time
-	UpdatedAt time.Time
-	DeletedAt *time.Time
-}
-
 type User struct {
 	gorm.Model
 	Name string
@@ -45,16 +38,21 @@ func main() {
 
 	db := dpgorm.NewDB(&_db)
 
+	// set our threshold to log everything
+	db.SetThreshold(-1)
+
 	go dps.CaptureStats()
 
 	db.AutoMigrate(&User{})
 
 	user := User{Name: "Jinzhu"}
-
 	blah := db.Create(&user)
 	log.Println(blah)
+	log.Println(db.First(&user))
 
-	db.First(&user)
+	var count int
+	db.Model(User{}).Where("name = ?", "Jinzhu").Count(&count)
+	log.Println(count)
 
 	time.Sleep(120 * time.Second)
 }
