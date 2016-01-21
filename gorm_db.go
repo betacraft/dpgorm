@@ -2,7 +2,7 @@ package dpgorm
 
 import (
 	"fmt"
-	"github.com/deferpanic/deferclient/deferstats"
+	"github.com/betacraft/deferclient/deferstats"
 	"github.com/jinzhu/gorm"
 	"time"
 )
